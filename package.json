@@ -10,12 +10,8 @@
     "build": "tsc",
     "start": "npm run build && dist/cli.js",
     "start:debug": "DEV=true npm run build && dist/cli.js",
-    "pretest": "npm run build",
-    "test": "xo && ava",
     "format": "prettier -uw --ignore-path .gitignore .",
-    "lint:eslint": "eslint . --cache --fix --ignore-path .gitignore",
-    "lint:stylelint": "stylelint **/*.css --cache --fix --ignore-path .gitignore",
-    "lint": "yarn run lint:eslint && yarn run lint:stylelint",
+    "lint": "eslint . --cache --fix --ignore-path .gitignore",
     "prepare": "husky install"
   },
   "files": [
@@ -24,39 +20,27 @@
   "dependencies": {
     "ink": "^3.2.0",
     "meow": "^9.0.0",
-    "react": "^17.0.2"
-  },
-  "ava": {
-    "typescript": {
-      "extensions": [
-        "tsx"
-      ],
-      "rewritePaths": {
-        "source/": "dist/"
-      }
-    }
-  },
-  "xo": {
-    "extends": "xo-react",
-    "rules": {
-      "react/prop-types": "off"
-    }
+    "react": "^17.0.2",
+    "chalk": "^4.1.2"
   },
   "devDependencies": {
-    "@ava/typescript": "^3.0.1",
     "@sindresorhus/tsconfig": "^2.0.0",
-    "ava": "^3.15.0",
-    "chalk": "^4.1.2",
+    "@types/react": "^17.0.35",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-airbnb-typescript": "14.0.2",
     "eslint-config-xo-react": "^0.25.0",
+    "eslint-config-prettier": "8.3.0",
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-unicorn": "36.0.0",
+    "eslint-plugin-react-prefer-function-component": "^0.0.7",
     "husky": "^7.0.4",
-    "ink-testing-library": "^2.1.0",
     "lint-staged": "^12.0.3",
     "prettier": "2.4.1",
     "react-devtools": "^4.21.0",
-    "typescript": "^4.5.2",
-    "xo": "^0.39.1"
+    "typescript": "4.4.4"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",

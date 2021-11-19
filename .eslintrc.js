@@ -5,6 +5,9 @@ module.exports = {
     es2021: true
   },
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json'
+  },
   plugins: ['@typescript-eslint', 'react-prefer-function-component'],
   extends: [
     'eslint:all',
@@ -13,7 +16,6 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:react/all',
-    'plugin:jsx-a11y/recommended',
     'airbnb',
     'airbnb-typescript',
     'airbnb/hooks',
@@ -99,6 +101,7 @@ module.exports = {
     'react/no-string-refs': 'off',
     'react/no-this-in-sfc': 'off',
     'react/no-will-update-set-state': 'off',
+    'react/require-default-props': 'off',
     'react/prefer-es6-class': 'off',
     'react/no-unused-state': 'off',
     'react/prop-types': 'off',

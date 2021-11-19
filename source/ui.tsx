@@ -1,10 +1,15 @@
-import React, { FC } from 'react'
-import { useInput, Box, useApp, Text } from 'ink'
+import { Box, Text, useApp, useInput } from 'ink'
+import React from 'react'
 
-const App: FC<{ name?: string }> = () => {
+const initial = 1
+const down = 10
+const right = 20
+const step = 1
+
+function App({ name = 'Stranger' }: { name?: string }): JSX.Element {
   const { exit } = useApp()
-  const [x, setX] = React.useState(1)
-  const [y, setY] = React.useState(1)
+  const [x, setX] = React.useState(initial)
+  const [y, setY] = React.useState(initial)
 
   useInput((input, key) => {
     if (input === 'q') {
@@ -12,24 +17,25 @@ const App: FC<{ name?: string }> = () => {
     }
 
     if (key.leftArrow) {
-      setX(Math.max(1, x - 1))
+      setX(Math.max(step, x - step))
     }
 
     if (key.rightArrow) {
-      setX(Math.min(20, x + 1))
+      setX(Math.min(right, x + step))
     }
 
     if (key.upArrow) {
-      setY(Math.max(1, y - 1))
+      setY(Math.max(step, y - step))
     }
 
     if (key.downArrow) {
-      setY(Math.min(10, y + 1))
+      setY(Math.min(down, y + step))
     }
   })
 
   return (
     <Box flexDirection='column'>
+      <Text>Hello, {name}</Text>
       <Text>Use arrow keys to move the face. Press “q” to exit.</Text>
       <Box height={12} paddingLeft={x} paddingTop={y}>
         <Text>^_^</Text>
@@ -41,5 +47,5 @@ const App: FC<{ name?: string }> = () => {
   // </Text>
 }
 
-module.exports = App
+// module.exports = App
 export default App

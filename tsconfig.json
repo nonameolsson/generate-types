@@ -1,15 +1,17 @@
 {
   "extends": "@sindresorhus/tsconfig",
   "compilerOptions": {
-    "module": "commonjs",
-    "jsx": "react",
+    // "module": "commonjs",
+    "jsx": "react-jsx",
     "esModuleInterop": true,
     "outDir": "dist",
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "strict": true,
     "noImplicitAny": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "module": "esnext",
+    "target": "es2015"
   },
-  "include": ["source"]
+  "include": ["source", ".eslintrc.js"]
 }
