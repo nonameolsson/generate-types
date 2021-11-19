@@ -1,13 +1,13 @@
 {
   "name": "generate-assets",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "bin": "dist/cli.js",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && chmod +x dist/cli.js",
     "start": "npm run build && dist/cli.js",
     "start:debug": "DEV=true npm run build && dist/cli.js",
     "format": "prettier -uw --ignore-path .gitignore .",

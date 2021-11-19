@@ -1,4 +1,3 @@
-// eslint-disable-next-line unicorn/prefer-module
 module.exports = {
   env: {
     node: true,
@@ -158,6 +157,7 @@ module.exports = {
         }
       }
     ],
+    'unicorn/prefer-module': 'off',
     'unicorn/no-nested-ternary': ['error'],
     'unicorn/prevent-abbreviations': [
       'error',

@@ -35,17 +35,14 @@ function App({ name = 'Stranger' }: { name?: string }): JSX.Element {
 
   return (
     <Box flexDirection='column'>
-      <Text>Hello, {name}</Text>
+      <Text color='green'>Hello, {name}</Text>
       <Text>Use arrow keys to move the face. Press “q” to exit.</Text>
       <Box height={12} paddingLeft={x} paddingTop={y}>
         <Text>^_^</Text>
       </Box>
     </Box>
   )
-  // <Text>
-  // 	Hello, <Text color="green">{name}</Text>
-  // </Text>
 }
 
-// module.exports = App
+module.exports = App
 export default App
