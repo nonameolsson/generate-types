@@ -1,14 +1,13 @@
 #!/usr/bin/env node
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importDefault(require("react"));
-const ink_1 = require("ink");
-const meow_1 = __importDefault(require("meow"));
-const ui_1 = __importDefault(require("./ui"));
-const cli = (0, meow_1.default)(`
+'use strict'
+Object.defineProperty(exports, '__esModule', { value: true })
+const tslib_1 = require('tslib')
+const react_1 = (0, tslib_1.__importDefault)(require('react'))
+const ink_1 = require('ink')
+const meow_1 = (0, tslib_1.__importDefault)(require('meow'))
+const ui_1 = (0, tslib_1.__importDefault)(require('./ui'))
+const cli = (0, meow_1.default)(
+  `
 	Usage
 	  $ generate-assets
 
@@ -18,11 +17,15 @@ const cli = (0, meow_1.default)(`
 	Examples
 	  $ generate-assets --name=Jane
 	  Hello, Jane
-`, {
+`,
+  {
     flags: {
-        name: {
-            type: 'string'
-        }
+      name: {
+        type: 'string'
+      }
     }
-});
-(0, ink_1.render)(react_1.default.createElement(ui_1.default, { name: cli.flags.name }));
+  }
+)
+;(0, ink_1.render)(
+  react_1.default.createElement(ui_1.default, { name: cli.flags.name })
+)
