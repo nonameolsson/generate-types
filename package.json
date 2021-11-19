@@ -59,6 +59,7 @@
     "xo": "^0.39.1"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{js,ts,tsx}": "eslint --cache --fix"
   }
 }
